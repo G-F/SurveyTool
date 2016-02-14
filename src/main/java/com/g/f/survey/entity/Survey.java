@@ -19,6 +19,9 @@ public class Survey {
 	@Size(min=0,max=255)
 	private String title;
 	
+	@Column(nullable=false)
+	private Integer userId;
+
 	public String getTitle() {
 		return title;
 	}
@@ -26,9 +29,6 @@ public class Survey {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-
-	@Column(nullable=false)
-	private Integer userId;
 
 	public Integer getSurveyId() {
 		return surveyId;
