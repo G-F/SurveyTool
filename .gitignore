@@ -36,3 +36,4 @@ overridedb.*
 .factorypath
 .mvn
 *.db
+*.log
