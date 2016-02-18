@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -15,7 +16,7 @@ import com.g.f.survey.entity.Question;
 import com.g.f.survey.service.QuestionService;
 
 @RestController
-@RequestMapping("api/questions")
+@RequestMapping("api/v1/questions")
 public class QuestionController {
 
 	@Autowired
@@ -26,6 +27,11 @@ public class QuestionController {
 	@RequestMapping(method = RequestMethod.GET)
 	List<Question> getQuestions() {
 		return questionService.findAll();
+	}
+	
+	@RequestMapping(value="/survey/{surveyId}" ,method = RequestMethod.GET)
+	List<Question> getQuestionsBySurveyId(@PathVariable int surveyId) {
+		return questionService.findBySurveyId(surveyId);
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)

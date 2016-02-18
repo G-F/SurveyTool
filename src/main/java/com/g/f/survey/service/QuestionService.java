@@ -18,7 +18,10 @@ public class QuestionService {
 
 	public List<Question> findAll() {
 		return questionRepository.findAll();
-
+	}
+	
+	public List<Question> findBySurveyId(int surveyId) {
+		return questionRepository.findBySurveyId(surveyId);
 	}
 
 	public Question save(Question question) {

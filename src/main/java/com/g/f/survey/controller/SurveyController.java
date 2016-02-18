@@ -15,7 +15,7 @@ import com.g.f.survey.entity.Survey;
 import com.g.f.survey.service.SurveyService;
 
 @RestController
-@RequestMapping("api/surveys")
+@RequestMapping("api/v1/surveys")
 public class SurveyController {
 	
 	@Autowired
