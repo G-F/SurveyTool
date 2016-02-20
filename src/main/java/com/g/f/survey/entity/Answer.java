@@ -17,6 +17,17 @@ public class Answer {
 	@Column(nullable = false)
 	private Integer userId;
 
+	@Column(nullable = false)
+	private Integer questionId;
+
+	public Integer getQuestionId() {
+		return questionId;
+	}
+
+	public void setQuestionId(Integer questionId) {
+		this.questionId = questionId;
+	}
+
 	public Integer getAnswerId() {
 		return answerId;
 	}
